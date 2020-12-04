@@ -51,7 +51,7 @@ public class User {
     private Date dayOfBirth;
 
     @NotNull
-    private String statusAccount;
+    private String statusAccount="enable";
 
     private boolean isDelete = false;
 

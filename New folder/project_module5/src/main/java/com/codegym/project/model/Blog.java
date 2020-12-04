@@ -33,7 +33,7 @@ public class Blog {
     private String image;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;

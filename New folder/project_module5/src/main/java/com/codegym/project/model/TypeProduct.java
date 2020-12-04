@@ -30,7 +30,7 @@ public class TypeProduct {
     private String description;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;

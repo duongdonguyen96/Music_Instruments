@@ -33,7 +33,7 @@ public class Rate {
     private String content;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateDelete;

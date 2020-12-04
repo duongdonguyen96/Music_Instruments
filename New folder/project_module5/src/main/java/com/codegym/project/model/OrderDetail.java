@@ -29,7 +29,7 @@ public class OrderDetail {
     private String status;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;

@@ -40,11 +40,10 @@ public class Product {
     @NotNull
     private Long size;
 
-    @NotNull
     private String color;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;
@@ -53,7 +52,7 @@ public class Product {
     private Date dateDelete;
 
     @NotNull
-    private Long Amount;
+    private Long amount;
 
     private boolean isDelete = false;
 

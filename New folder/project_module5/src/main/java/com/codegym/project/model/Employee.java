@@ -54,7 +54,7 @@ public class Employee {
     private String idCard;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;
@@ -62,7 +62,7 @@ public class Employee {
     @NotNull
     private Date dateDelete;
 
-    private int role;
+    private String role= "employee";
 
 
     private boolean isDelete=false;

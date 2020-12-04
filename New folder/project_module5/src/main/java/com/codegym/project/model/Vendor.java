@@ -42,7 +42,7 @@ public class Vendor {
     private String surrogate;
 
     @NotNull
-    private Date dateAdd;
+    private Date dateAdd = new Date();
 
     @NotNull
     private Date dateUpdate;
