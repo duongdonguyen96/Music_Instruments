@@ -1,4 +1,4 @@
 package com.codegym.project.service.Impl;
 
-public class RateService {
+public class OrderServiceImpl {
 }
