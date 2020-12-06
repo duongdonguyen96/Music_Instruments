@@ -19,14 +19,14 @@ import java.util.Date;
 @NoArgsConstructor
 public class Blog {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     private String title;
 
     @NotNull
-    @Column(name="content",columnDefinition="LONGTEXT")
+//    @Column(name="content",columnDefinition="LONGTEXT")
     private String content;
 
     @NotNull

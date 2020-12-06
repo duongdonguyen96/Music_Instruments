@@ -1,10 +1,7 @@
 package com.codegym.project.controller.api;
 
-import com.codegym.project.model.Product;
 import com.codegym.project.model.TypeProduct;
 import com.codegym.project.model.message.MessageNotification;
-import com.codegym.project.repository.TypeProductRepository;
-import com.codegym.project.service.ProductService;
 import com.codegym.project.service.TypeProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +16,7 @@ import javax.validation.Valid;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api")
 public class ApiTypeProductController {
