@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/products")
 public class ProductController {
-
     @GetMapping(value = "")
     public ModelAndView listProducts(){
         ModelAndView modelAndView=new ModelAndView("/admin/Product");
