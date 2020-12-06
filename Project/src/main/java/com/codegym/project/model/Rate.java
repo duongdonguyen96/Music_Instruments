@@ -19,7 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Rate {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -29,7 +29,7 @@ public class Rate {
     private String email;
 
     @NotNull
-    @Column(name="content",columnDefinition="LONGTEXT")
+//    @Column(name="content",columnDefinition="LONGTEXT")
     private String content;
 
     @NotNull

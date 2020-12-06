@@ -19,7 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class OrderDetail {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

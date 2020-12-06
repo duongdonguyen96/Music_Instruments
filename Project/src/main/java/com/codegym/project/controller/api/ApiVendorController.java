@@ -1,10 +1,7 @@
 package com.codegym.project.controller.api;
 
-import com.codegym.project.model.Product;
-import com.codegym.project.model.TypeProduct;
 import com.codegym.project.model.Vendor;
 import com.codegym.project.model.message.MessageNotification;
-import com.codegym.project.service.ProductService;
 import com.codegym.project.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
