@@ -26,7 +26,6 @@ public class Blog {
     private String title;
 
     @NotNull
-//    @Column(name="content",columnDefinition="LONGTEXT")
     private String content;
 
     @NotNull
@@ -35,10 +34,8 @@ public class Blog {
     @NotNull
     private Date dateAdd = new Date();
 
-    @NotNull
     private Date dateUpdate;
 
-    @NotNull
     private Date dateDelete;
 
     private boolean isDelete=false;

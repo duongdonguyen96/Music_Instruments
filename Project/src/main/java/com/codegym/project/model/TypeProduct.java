@@ -32,10 +32,8 @@ public class TypeProduct {
     @NotNull
     private Date dateAdd = new Date();
 
-    @NotNull
     private Date dateUpdate;
 
-    @NotNull
     private Date dateDelete;
 
     private boolean isDelete = false;
