@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "products")
-@Where(clause = "isDelete=false")
+@Where(clause = "delete=false")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -51,8 +51,8 @@ public class Product {
 
     @NotNull
     private Long amount;
-
-    private boolean isDelete = false;
+    @Where(clause = "delete=false")
+    private boolean delete = false;
 
     @ManyToOne
     @JoinColumn(name = "vendor_id")

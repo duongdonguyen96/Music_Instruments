@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Entity
 @Table
-@Where(clause = "isDelete=false")
+@Where(clause = "delete=false")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -61,7 +61,7 @@ public class Employee {
     private Date dateDelete;
 
     private String role= "employee";
-
-    private boolean isDelete=false;
+    @Where(clause = "delete=false")
+    private boolean delete=false;
 
 }

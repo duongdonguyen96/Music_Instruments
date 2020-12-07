@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "vendors")
-@Where(clause = "isDelete=false")
+@Where(clause = "delete=false")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -48,7 +48,7 @@ public class Vendor {
 
     private Date dateDelete;
 
-    private boolean isDelete=false;
+    private boolean delete=false;
 
     @OneToMany(mappedBy = "vendor")
     private Set<Product> products;

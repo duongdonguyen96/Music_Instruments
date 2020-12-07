@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "orderDetails")
-@Where(clause = "isDelete=false")
+@Where(clause = "delete=false")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -36,6 +36,6 @@ public class OrderDetail {
 
     @NotNull
     private Long price;
-
-    private boolean isDelete = false;
+    @Where(clause = "delete=false")
+    private boolean delete = false;
 }

@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "users")
-@Where(clause = "isDelete=false")
+@Where(clause = "delete=false")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -51,8 +51,8 @@ public class User {
     private Date dayOfBirth;
 
     private String statusAccount="enable";
-
-    private boolean isDelete = false;
+    @Where(clause = "delete=false")
+    private boolean delete = false;
 
 
 }
