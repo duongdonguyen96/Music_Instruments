@@ -5,3 +5,4 @@ Long up api controller TypeProduct,Product,Vendor + validate backend voi binding
 Long update teamplate admin 12h55 -6/12
 Long update teamplate admin 20h25 -6/12
 Long update teamplate admin vs controller 21h40 -6/12
+Long update layout head 08h30 -7/12
