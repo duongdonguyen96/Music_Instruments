@@ -13,11 +13,11 @@ import java.util.Set;
 
 @Entity
 @Table
-@Where(clause = "isDelete=false")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Where(clause ="delete=false")
 public class TypeProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,7 @@ public class TypeProduct {
 
     private Date dateDelete;
 
-    private boolean isDelete = false;
+    private boolean delete = false;
 
     @OneToMany(mappedBy = "typeProduct")
     private Set<Product> products;
