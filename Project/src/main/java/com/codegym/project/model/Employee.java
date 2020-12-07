@@ -56,14 +56,11 @@ public class Employee {
     @NotNull
     private Date dateAdd = new Date();
 
-    @NotNull
     private Date dateUpdate;
 
-    @NotNull
     private Date dateDelete;
 
     private String role= "employee";
-
 
     private boolean isDelete=false;
 

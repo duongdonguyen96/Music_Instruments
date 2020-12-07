@@ -50,7 +50,6 @@ public class User {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dayOfBirth;
 
-    @NotNull
     private String statusAccount="enable";
 
     private boolean isDelete = false;

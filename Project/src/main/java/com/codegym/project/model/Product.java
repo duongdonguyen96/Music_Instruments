@@ -45,10 +45,8 @@ public class Product {
     @NotNull
     private Date dateAdd = new Date();
 
-    @NotNull
     private Date dateUpdate;
 
-    @NotNull
     private Date dateDelete;
 
     @NotNull
