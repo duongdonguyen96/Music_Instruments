@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
@@ -33,6 +34,7 @@ public class Vendor {
     private String phone;
 
     @NotNull
+    @Email
     private String email;
 
     @NotNull
@@ -44,7 +46,7 @@ public class Vendor {
     @NotNull
     private Date dateAdd = new Date();
 
-    private Date dateUpdate;
+    private Date dateUpdate=new Date();
 
     private Date dateDelete;
 
@@ -52,4 +54,11 @@ public class Vendor {
 
     @OneToMany(mappedBy = "vendor")
     private Set<Product> products;
+
+    public void setDateDelete(Date dateDelete) {
+        this.dateDelete = dateDelete;
+    }
+    public void setDelete(boolean delete) {
+        this.delete = delete;
+    }
 }

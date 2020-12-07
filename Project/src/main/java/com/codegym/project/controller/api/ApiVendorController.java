@@ -26,9 +26,6 @@ public class ApiVendorController {
     @GetMapping(value = "/vendors/")
     public ResponseEntity<List<Vendor>> listProducts() {
         List<Vendor> vendorList = vendorService.findAll();
-        if (vendorList.isEmpty()){
-            return new ResponseEntity<List<Vendor>>(HttpStatus.NO_CONTENT);
-        }
         return new ResponseEntity<List<Vendor>>(vendorList, HttpStatus.OK);
     }
 

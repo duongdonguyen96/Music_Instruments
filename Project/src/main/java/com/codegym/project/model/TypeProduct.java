@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -32,7 +33,7 @@ public class TypeProduct {
     @NotNull
     private Date dateAdd = new Date();
 
-    private Date dateUpdate;
+    private Date dateUpdate=new Date();
 
     private Date dateDelete;
 
@@ -40,4 +41,12 @@ public class TypeProduct {
 
     @OneToMany(mappedBy = "typeProduct")
     private Set<Product> products;
+
+    public void setDateDelete(Date dateDelete) {
+        this.dateDelete = dateDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        this.delete = delete;
+    }
 }
