@@ -26,9 +26,6 @@ public class ApiTypeProductController {
     @GetMapping(value = "/typeProducts/")
     public ResponseEntity<List<TypeProduct>> listProducts() {
         List<TypeProduct> typeProductList = typeProductService.findAll();
-        if (typeProductList.isEmpty()){
-            return new ResponseEntity<List<TypeProduct>>(HttpStatus.NO_CONTENT);
-        }
         return new ResponseEntity<List<TypeProduct>>(typeProductList, HttpStatus.OK);
     }
 

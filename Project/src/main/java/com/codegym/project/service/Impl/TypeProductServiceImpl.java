@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,7 +35,9 @@ public class TypeProductServiceImpl implements TypeProductService {
         if (typeProduct==null){
             return false;
         }
-        typeProductRepository.delete(typeProduct);
+        typeProduct.setDelete(true);
+        typeProduct.setDateDelete(new Date());
+        typeProductRepository.save(typeProduct);
         return true;
     }
 }

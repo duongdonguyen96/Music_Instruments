@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,7 +35,9 @@ public class VendorServiceImpl implements VendorService {
         if (vendor==null){
             return false;
         }
-        vendorRepository.delete(vendor);
+        vendor.setDelete(true);
+        vendor.setDateDelete(new Date());
+        vendorRepository.save(vendor);
         return true;
     }
 }
