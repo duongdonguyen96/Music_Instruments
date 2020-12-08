@@ -40,4 +40,9 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
         return true;
     }
+
+    @Override
+    public List<Product> findAllProductDeleted() {
+        return productRepository.findAllProductDeleted();
+    }
 }

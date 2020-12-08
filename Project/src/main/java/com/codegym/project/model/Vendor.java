@@ -63,4 +63,8 @@ public class Vendor {
     public void setDelete(boolean delete) {
         this.delete = delete;
     }
+
+    public boolean isDelete() {
+        return delete;
+    }
 }

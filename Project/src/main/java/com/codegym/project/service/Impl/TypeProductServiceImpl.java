@@ -1,6 +1,8 @@
 package com.codegym.project.service.Impl;
 
+import com.codegym.project.model.Product;
 import com.codegym.project.model.TypeProduct;
+import com.codegym.project.repository.ProductRepository;
 import com.codegym.project.repository.TypeProductRepository;
 import com.codegym.project.service.TypeProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import java.util.List;
 public class TypeProductServiceImpl implements TypeProductService {
     @Autowired
     TypeProductRepository typeProductRepository;
+    @Autowired
+    ProductRepository productRepository;
     @Override
     public List<TypeProduct> findAll() {
         return typeProductRepository.findAll();
@@ -38,6 +42,19 @@ public class TypeProductServiceImpl implements TypeProductService {
         typeProduct.setDelete(true);
         typeProduct.setDateDelete(new Date());
         typeProductRepository.save(typeProduct);
+        List<Product> productList=productRepository.findAll();
+        for (Product product:productList) {
+            if (product.getTypeProduct().isDelete()){
+                product.setDelete(true);
+                product.setDateDelete(new Date());
+                productRepository.save(product);
+            }
+        }
         return true;
+    }
+
+    @Override
+    public List<TypeProduct> findAllTypeProductsDeleted() {
+        return typeProductRepository.findAllTypeProductsDeleted();
     }
 }
