@@ -6,6 +6,7 @@ import com.codegym.project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,6 +35,8 @@ public class ProductServiceImpl implements ProductService {
         if (product==null){
             return false;
         }
+        product.setDateDelete(new Date());
+        product.setDelete(true);
         productRepository.save(product);
         return true;
     }

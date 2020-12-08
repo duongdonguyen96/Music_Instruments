@@ -4,6 +4,134 @@
 </head>
 
 <body>
+<!-- The Modal -->
+<div class="modal" id="modalAddEdit" name="modalAddEdit">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="formAddEdit" th:name="formAddEdit">
+                    <input type="hidden" name="id" id="id" value="" >
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="name" id="name"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Price</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="price" id="price"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Amount</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="amount" id="amount"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Weight</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="weight" id="weight"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Size</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="size" id="size"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Color</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="color" id="color">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Description</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea class="form-control" type="text"
+                                   name="description" id="description"
+                                      data-rule-required=true>
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Image</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text"
+                                   name="image" id="image"
+                                   data-rule-required=true>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Types</label>
+                        </div>
+                        <div class="col-9">
+                            <select class="form-control" name="type" id="type">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-3">
+                            <label>Vendors</label>
+                        </div>
+                        <div class="col-9">
+                            <select class="form-control" name="vendor" id="vendor">
+
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a href="javascript:" class="btn btn-primary"
+                   onclick="products.save()">Save</a>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- The Modal End-->
+
+
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -29,7 +157,7 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-table"></i>
                                     <span>Products</span></a>
                                 <ul class="collapse">
-                                    <li class=" active"><a href="Product.html">Products list</a></li>
+                                    <li class=" active"><a href="/products">Products list</a></li>
                                     <li><a href="ProductIsDelete.html">Products Deleted</a></li>
                                 </ul>
                             </li>
@@ -183,30 +311,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">PRODUCTS</h4>
-                                <div class="single-table">
+                                <div class="data-tables datatable-primary">
+                                    <button type="button" class="btn btn-success mb-3" onclick="products.addNew()"><i class="fa fa-plus" aria-hidden="true"> Add</i></button>
                                     <div class="table-responsive">
-                                        <table class="table text-center">
-                                            <thead class="text-uppercase bg-success">
-                                                <tr class="text-white">
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Price</th>
-                                                    <th scope="col">Quantity</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>$120</td>
-                                                    <td>
-                                                        <i class="fa fa-cogs" aria-hidden="true" title="Edit"></i>
-                                                        <i class="ti-trash" title="Delete"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
+                                        <table class="table text-center" id="products-datatables" name="products-datatables">
+
                                         </table>
                                     </div>
                                 </div>
@@ -405,9 +514,19 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+            integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+            integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <!-- offset area end -->
     <!-- jquery latest version -->
-    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!--    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>-->
     <!-- bootstrap 4 js -->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -420,5 +539,5 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
 </body>
-
+<script src="js/products.js"></script>
 </html>

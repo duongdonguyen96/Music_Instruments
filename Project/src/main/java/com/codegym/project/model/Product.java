@@ -23,7 +23,7 @@ public class Product {
     private Long id;
 
     @NotNull
-    private String productName;
+    private String name;
 
     @NotNull
     private Long price;
@@ -45,13 +45,13 @@ public class Product {
     @NotNull
     private Date dateAdd = new Date();
 
-    private Date dateUpdate;
+    private Date dateUpdate=new Date();
 
     private Date dateDelete;
 
     @NotNull
     private Long amount;
-    @Where(clause = "delete=false")
+
     private boolean delete = false;
 
     @ManyToOne
@@ -61,4 +61,12 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "typeProduct_id")
     private TypeProduct typeProduct;
+
+    public void setDateDelete(Date dateDelete) {
+        this.dateDelete = dateDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        this.delete = delete;
+    }
 }

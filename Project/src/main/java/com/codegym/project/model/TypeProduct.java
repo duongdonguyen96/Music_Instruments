@@ -1,5 +1,6 @@
 package com.codegym.project.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,6 +41,7 @@ public class TypeProduct {
     private boolean delete = false;
 
     @OneToMany(mappedBy = "typeProduct")
+    @JsonIgnore
     private Set<Product> products;
 
     public void setDateDelete(Date dateDelete) {
