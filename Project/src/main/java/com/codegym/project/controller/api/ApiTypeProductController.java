@@ -29,6 +29,7 @@ public class ApiTypeProductController {
         return new ResponseEntity<List<TypeProduct>>(typeProductList, HttpStatus.OK);
     }
 
+
     @RequestMapping(value = "/typeProduct/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TypeProduct> findById(@PathVariable("id") Long id) {
         try{
@@ -90,5 +91,12 @@ public class ApiTypeProductController {
             messageNotification.setObject(typeProduct);
             return new ResponseEntity<Object>(messageNotification, HttpStatus.OK);
         }
+    }
+
+
+    @GetMapping(value = "/typeProductsDeleted/")
+    public ResponseEntity<List<TypeProduct>> listProductsDeleted() {
+        List<TypeProduct> typeProductListDeleted = typeProductService.findAllTypeProductsDeleted();
+        return new ResponseEntity<List<TypeProduct>>(typeProductListDeleted, HttpStatus.OK);
     }
 }

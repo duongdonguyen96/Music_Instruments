@@ -69,4 +69,12 @@ public class Product {
     public void setDelete(boolean delete) {
         this.delete = delete;
     }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public TypeProduct getTypeProduct() {
+        return typeProduct;
+    }
 }

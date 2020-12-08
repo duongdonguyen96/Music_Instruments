@@ -91,4 +91,11 @@ public class ApiVendorController {
             return new ResponseEntity<Object>(messageNotification, HttpStatus.OK);
         }
     }
+
+    @GetMapping(value = "/vendorsDeleted/")
+    public ResponseEntity<List<Vendor>> listProductsDeleted() {
+        List<Vendor> vendorList = vendorService.findAllVendorsDeleted();
+        return new ResponseEntity<List<Vendor>>(vendorList, HttpStatus.OK);
+    }
+
 }
