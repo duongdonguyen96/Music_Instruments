@@ -93,10 +93,32 @@ public class ApiProductController {
         }
     }
 
+// productDeleted
 
     @GetMapping(value = "/productsDeleted/")
     public ResponseEntity<List<Product>> listProductsDeleted() {
         List<Product> productListDeleted =productService.findAllProductDeleted();
         return new ResponseEntity<List<Product>>(productListDeleted, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/productDeleted/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean deleteProduct(@PathVariable("id") Long id) {
+        boolean isProduct=false;
+        try {
+            isProduct= productService.deleteProduct(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isProduct;
+    }
+    @RequestMapping(value = "/productUndo/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean undoProduct(@PathVariable("id") Long id) {
+        boolean isProduct=false;
+        try {
+            isProduct= productService.undoProduct(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isProduct;
     }
 }

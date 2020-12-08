@@ -14,4 +14,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             value = "SELECT * FROM products u WHERE u.delete = true",
             nativeQuery = true)
     List<Product> findAllProductDeleted();
+    @Query(
+            value = "select * from products where id =?1",
+            nativeQuery = true)
+    Product findProductDeleted(long id);
 }
