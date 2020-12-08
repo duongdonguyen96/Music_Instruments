@@ -31,10 +31,24 @@ public class Rate {
     @NotNull
     private String content;
 
+    private String status="Chưa đọc";
+
     @NotNull
     private Date dateAdd = new Date();
 
     private Date dateDelete;
-    @Where(clause = "delete=false")
+
     private boolean delete = false;
+
+    public void setDateDelete(Date dateDelete) {
+        this.dateDelete = dateDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        this.delete = delete;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

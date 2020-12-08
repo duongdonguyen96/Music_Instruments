@@ -101,7 +101,7 @@ vendors.save = function () {
             vendorObj.dateUpdate = new Date();
             //
             $.ajax({
-                url: "http://localhost:8080/api/typeProduct/",
+                url: "http://localhost:8080/api/vendor/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
