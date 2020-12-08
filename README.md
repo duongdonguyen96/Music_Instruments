@@ -8,3 +8,4 @@ Long update teamplate admin vs controller 21h40 -6/12
 Long update layout head 08h30 -7/12
 Long update CRUD type va vendor 17h05 - 7/12
 Nguyen update user employee crud 17h30 7/12
+Long update 8h10 -8/12
