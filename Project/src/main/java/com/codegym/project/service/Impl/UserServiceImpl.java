@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean delete(long id) throws SQLException {
-
         User user = this.findById(id);
         if (user == null) {
             return false;
