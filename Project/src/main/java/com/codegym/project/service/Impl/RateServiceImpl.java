@@ -34,8 +34,8 @@ public class RateServiceImpl implements RateService {
         if (rate==null){
             return false;
         }
-        rate.setDateDelete(new Date());
         rate.setDelete(true);
+        rate.setDateDelete(new Date());
         rateRepository.save(rate);
         return true;
     }
