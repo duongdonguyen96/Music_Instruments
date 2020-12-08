@@ -77,4 +77,12 @@ public class Product {
     public TypeProduct getTypeProduct() {
         return typeProduct;
     }
+
+    public boolean isDelete() {
+        return delete;
+    }
+
+    public void setDateUpdate(Date dateUpdate) {
+        this.dateUpdate = dateUpdate;
+    }
 }
