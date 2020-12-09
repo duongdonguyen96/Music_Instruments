@@ -90,7 +90,7 @@ products.delete = function (id) {
 
 products.undo= function (id) {
     bootbox.confirm({
-        message: "Do you want to undo this Product",
+        message: "Do you want to permanently delete the Product",
         buttons: {
             confirm: {
                 label: 'Yes',

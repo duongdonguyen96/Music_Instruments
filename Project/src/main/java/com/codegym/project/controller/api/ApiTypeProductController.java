@@ -93,10 +93,32 @@ public class ApiTypeProductController {
         }
     }
 
-
+// type deleted
     @GetMapping(value = "/typeProductsDeleted/")
     public ResponseEntity<List<TypeProduct>> listProductsDeleted() {
         List<TypeProduct> typeProductListDeleted = typeProductService.findAllTypeProductsDeleted();
         return new ResponseEntity<List<TypeProduct>>(typeProductListDeleted, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/typeProductDeleted/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean deleteProduct(@PathVariable("id") Long id) {
+        boolean isVendors=false;
+        try {
+            isVendors= typeProductService.deleteTypeProduct(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isVendors;
+    }
+
+    @RequestMapping(value = "/typeProductUndo/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean undoVendor(@PathVariable("id") Long id) {
+        boolean isVendors=false;
+        try {
+            isVendors= typeProductService.undoTypeProduct(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isVendors;
     }
 }

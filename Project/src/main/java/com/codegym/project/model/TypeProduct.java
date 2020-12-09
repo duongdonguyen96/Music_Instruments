@@ -55,4 +55,8 @@ public class TypeProduct {
     public boolean isDelete() {
         return delete;
     }
+
+    public void setDateUpdate(Date dateUpdate) {
+        this.dateUpdate = dateUpdate;
+    }
 }
