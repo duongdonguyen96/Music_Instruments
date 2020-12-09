@@ -41,38 +41,40 @@ public class ProductServiceImpl implements ProductService {
         return true;
     }
 
-    @Override
-    public List<Product> findAllProductDeleted() {
-        return productRepository.findAllProductDeleted();
-    }
-
-    @Override
-    public Product findProductDeleted(long id) {
-        Product product=null;
-        product=productRepository.findProductDeleted(id);
-        return product;
-    }
-
-    @Override
-    public boolean deleteProduct(long id) {
-        Product product=this.findProductDeleted(id);
-        if (product!=null){
-            productRepository.delete(product);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean undoProduct(long id) {
-        Product product=this.findProductDeleted(id);
-        if (product!=null){
-            product.setDelete(false);
-            product.setDateUpdate(new Date());
-            productRepository.save(product);
-            return true;
-        }
-        return false;
-    }
+//product deleted
+//
+//    @Override
+//    public List<Product> findAllProductDeleted() {
+//        return productRepository.findAllProductDeleted();
+//    }
+//
+//    @Override
+//    public Product findProductDeleted(long id) {
+//        Product product=null;
+//        product=productRepository.findProductDeleted(id);
+//        return product;
+//    }
+//
+//    @Override
+//    public boolean deleteProduct(long id) {
+//        Product product=this.findProductDeleted(id);
+//        if (product!=null){
+//            productRepository.delete(product);
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean undoProduct(long id) {
+//        Product product=this.findProductDeleted(id);
+//        if (product!=null){
+//            product.setDelete(false);
+//            product.setDateUpdate(new Date());
+//            productRepository.save(product);
+//            return true;
+//        }
+//        return false;
+//    }
 
 }

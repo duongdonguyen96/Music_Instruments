@@ -53,8 +53,44 @@ public class VendorServiceImpl implements VendorService {
         return true;
     }
 
+
+// vendor deleted
+
     @Override
     public List<Vendor> findAllVendorsDeleted() {
         return vendorRepository.findAllVendorsDeleted();
     }
+
+    @Override
+    public Vendor findVendorDeleted(long id) {
+        Vendor vendor=null;
+        vendor=vendorRepository.findVendorDeleted(id);
+        return vendor;
+    }
+
+
+    @Override
+    public boolean deleteVendor(long id) {
+        Vendor vendor=this.findVendorDeleted(id);
+        if (vendor!=null){
+            vendorRepository.delete(vendor);
+//            chu y lien quan thang product
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean undoVendor(long id) {
+        Vendor vendor=this.findVendorDeleted(id);
+        if (vendor!=null){
+            vendor.setDelete(false);
+            vendorRepository.save(vendor);
+//            chu y lien quan thang product
+            return true;
+        }
+        return false;
+    }
+
+
 }
