@@ -53,8 +53,38 @@ public class TypeProductServiceImpl implements TypeProductService {
         return true;
     }
 
+//    type deleted
     @Override
     public List<TypeProduct> findAllTypeProductsDeleted() {
         return typeProductRepository.findAllTypeProductsDeleted();
+    }
+
+    @Override
+    public TypeProduct findTypeProductDeleted(long id) {
+        TypeProduct typeProduct=null;
+        typeProduct=typeProductRepository.findTypeProductsDeleted(id);
+        return typeProduct;
+    }
+
+    @Override
+    public boolean deleteTypeProduct(long id) {
+        TypeProduct typeProduct=this.findTypeProductDeleted(id);
+        if (typeProduct!=null){
+            typeProductRepository.delete(typeProduct);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean undoTypeProduct(long id) {
+        TypeProduct typeProduct=this.findTypeProductDeleted(id);
+        if (typeProduct!=null){
+            typeProduct.setDelete(false);
+            typeProduct.setDateUpdate(new Date());
+            typeProductRepository.save(typeProduct);
+            return true;
+        }
+        return false;
     }
 }
