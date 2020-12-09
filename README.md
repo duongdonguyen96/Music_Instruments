@@ -13,3 +13,4 @@ Long updateCrud 11h10 -8/12
 Long updateCrud 19h30 -8/12
 Long update delete va undo producDeleted 20h30 -8/12
 Long update vendor delete va undo  10h40 -9/12
+Long update type delete va undo  11h15 -9/12
