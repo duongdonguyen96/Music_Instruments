@@ -92,10 +92,34 @@ public class ApiVendorController {
         }
     }
 
+//vendor deleted
+
     @GetMapping(value = "/vendorsDeleted/")
     public ResponseEntity<List<Vendor>> listProductsDeleted() {
         List<Vendor> vendorList = vendorService.findAllVendorsDeleted();
         return new ResponseEntity<List<Vendor>>(vendorList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/vendorDeleted/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean deleteProduct(@PathVariable("id") Long id) {
+        boolean isVendors=false;
+        try {
+            isVendors= vendorService.deleteVendor(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isVendors;
+    }
+
+    @RequestMapping(value = "/vendorUndo/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean undoVendor(@PathVariable("id") Long id) {
+        boolean isVendors=false;
+        try {
+            isVendors= vendorService.undoVendor(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return isVendors;
     }
 
 }
